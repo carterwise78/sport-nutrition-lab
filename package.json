@@ -1,0 +1,9 @@
+{
+  "name": "fuel-lab-performance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Performance nutrition and video analysis dashboard for multiple sports",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

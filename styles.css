@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FuelLab Performance</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FuelLab</span>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#platform">Platform</a>
+          <a href="#sports">Sports</a>
+          <a href="#film">Film analysis</a>
+          <a href="#coach">Coach notes</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="button secondary">Log in</button>
+          <button class="button primary">Start plan</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Built for high-performance athletes</div>
+            <h1>
+              Train harder.<br />
+              <span class="gradient">Fuel smarter.</span>
+            </h1>
+            <p class="lead">
+              Precision nutrition, sport-specific dieting, and AI-assisted film analysis for
+              athletes across basketball, soccer, tennis, wrestling, and every other performance sport.
+            </p>
+
+            <div class="cta-row">
+              <button class="button primary">Get your plan</button>
+              <button class="button secondary">See athlete preview</button>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat-card">
+                <strong>42%</strong>
+                <span>faster recovery</span>
+              </div>
+              <div class="stat-card">
+                <strong>3.1x</strong>
+                <span>better consistency</span>
+              </div>
+              <div class="stat-card">
+                <strong>91%</strong>
+                <span>coach satisfaction</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-glow"></div>
+            <div class="athlete-card">
+              <div class="card-head">
+                <span>Performance snapshot</span>
+                <span>Week 7</span>
+              </div>
+
+              <div class="ring">
+                <div class="ring-inner">76%</div>
+              </div>
+
+              <div class="macro-grid">
+                <div class="macro">
+                  <span>Protein</span>
+                  <strong>180g</strong>
+                </div>
+                <div class="macro">
+                  <span>Carbs</span>
+                  <strong>320g</strong>
+                </div>
+                <div class="macro">
+                  <span>Water</span>
+                  <strong>3.2L</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="platform">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <h2>Fueling for every sport</h2>
+              <p>
+                Nutrition needs change with the demands of the sport: explosive power, repeated sprinting,
+                endurance, wrestling intensity, or precision movement.
+              </p>
+            </div>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-card">
+              <div class="icon">⚡</div>
+              <h3>Energy system match</h3>
+              <p>Build intake around the demands of the sport, from glycogen-heavy sessions to high-intensity power output.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">🥗</div>
+              <h3>Macro precision</h3>
+              <p>Progressive fueling to help athletes cut body fat, build lean mass, and maintain training quality.</p>
+            </article>
+            <article class="info-card">
+              <div class="icon">💧</div>
+              <h3>Hydration & recovery</h3>
+              <p>Reduce fatigue with better fluid timing, sodium awareness, and post-session glycogen restoration.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sports">
+        <div class="container">
+          <div class="section-heading compact">
+            <div>
+              <h2>Sport-specific performance dashboard</h2>
+              <p>Choose a sport and the system will reframe the nutrition, movement priorities, and recovery recommendations.</p>
+            </div>
+          </div>
+
+          <div class="sport-picker" id="sportPicker" aria-label="Sport selector"></div>
+
+          <div class="sports-grid">
+            <div class="dashboard-card">
+              <div class="card-topline">
+                <span id="sportBadge">Basketball</span>
+                <span class="pill success" id="sportRole">Power + repeat sprint</span>
+              </div>
+
+              <div class="metrics-grid">
+                <div class="metric-box">
+                  <span>Primary fuel</span>
+                  <strong id="primaryFuel">Carbohydrate</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Protein target</span>
+                  <strong id="proteinTarget">1.8–2.2g/kg</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Hydration</span>
+                  <strong id="hydrationTarget">3.0–3.5L/day</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Session focus</span>
+                  <strong id="sessionFocus">Explosive power</strong>
+                </div>
+              </div>
+
+              <div class="coach-note" id="dailyCoachNote">
+                Keep carbs high around gameplay and high-intensity sessions. Recovery nutrition should be timed within 60 minutes after play.
+              </div>
+            </div>
+
+            <div class="meal-card">
+              <h3>Sample intake</h3>
+              <div class="meal-list" id="mealList"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="film">
+        <div class="container">
+          <div class="section-heading compact">
+            <div>
+              <h2>Film analysis engine</h2>
+              <p>Upload training footage and the system evaluates angles, tempo, posture, and fatigue trends for the sport selected.</p>
+            </div>
+          </div>
+
+          <div class="video-grid">
+            <div class="upload-box">
+              <label class="upload-label" for="videoUpload">Upload training film</label>
+              <input id="videoUpload" type="file" accept="video/*" />
+              <video id="previewVideo" controls></video>
+            </div>
+
+            <div class="analysis-panel">
+              <div class="analysis-header">
+                <h3>AI coach output</h3>
+                <select id="analysisSport" aria-label="Analysis sport">
+                  <option value="basketball">Basketball</option>
+                  <option value="soccer">Soccer</option>
+                  <option value="tennis">Tennis</option>
+                  <option value="wrestling">Wrestling</option>
+                  <option value="rugby">Rugby</option>
+                  <option value="volleyball">Volleyball</option>
+                  <option value="swimming">Swimming</option>
+                  <option value="track">Track & Field</option>
+                  <option value="baseball">Baseball</option>
+                  <option value="badminton">Badminton</option>
+                  <option value="rowing">Rowing</option>
+                  <option value="gymnastics">Gymnastics</option>
+                </select>
+              </div>
+
+              <div class="result-grid">
+                <div class="result-box">
+                  <span>Movement quality</span>
+                  <strong id="movementQuality">8.4/10</strong>
+                </div>
+                <div class="result-box">
+                  <span>Load efficiency</span>
+                  <strong id="loadEfficiency">84%</strong>
+                </div>
+                <div class="result-box">
+                  <span>Fatigue signal</span>
+                  <strong id="fatigueSignal">Moderate</strong>
+                </div>
+                <div class="result-box">
+                  <span>Priority fix</span>
+                  <strong id="priorityFix">Increase carbs</strong>
+                </div>
+              </div>
+
+              <div class="analysis-note" id="analysisNote">
+                Movement is controlled but the athlete drops in rhythm late in effort. Increase pre-session carbs and tighten hydration around high-output intervals.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="coach">
+        <div class="container final-cta">
+          <div class="cta-box">
+            <div>
+              <h3>One system for every athlete.</h3>
+              <p>From basketball and soccer to tennis, wrestling, and niche performance sports, every plan is built around the sport-specific workload.</p>
+            </div>
+            <button class="button primary">Book a consult</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
